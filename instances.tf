@@ -42,7 +42,7 @@ resource "aws_instance" "demo_servers" {
   tags {
     Name = "${element(var.vm_names, count.index)}"
     Managed = "terraform"
-    Role = "${lookup(var.role, element(var.vm_names, count.index))}"
+    Roles = "${lookup(var.role, element(var.vm_names, count.index))}"
   }
 }
 
