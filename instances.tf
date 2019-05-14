@@ -29,6 +29,7 @@ resource "aws_instance" "demo_servers" {
   ami = "${lookup(var.instance_ami, element(var.vm_names, count.index), "ami-0de53d8956e8dcf80")}"
   availability_zone = "${var.region}a"
   subnet_id = "${aws_subnet.servers.id}"
+  iam_instance_profile = "${aws_iam_instance_profile.read_ec2_tags.id}"
   user_data = "${data.template_file.init.rendered}"
   vpc_security_group_ids = [
     "${aws_security_group.web-acl.id}",
