@@ -33,7 +33,7 @@ variable "instance_ami" {
   type = "map"
   default = {
     plone-app01 = "ami-0a313d6098716f372" # Ubuntu 18.04
-    static-site = "ami-0de53d8956e8dcf80" # Amazon Linux 2
+    static-site = "ami-0a313d6098716f372" # Ubuntu 18.04
   }
 }
 
